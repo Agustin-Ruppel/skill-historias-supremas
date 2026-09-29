@@ -1,0 +1,285 @@
+{
+ "tipo": "HR",
+ "estructura": "HR-CAJA (I): pregunta de la cajita + reacción → la cuenta → concepto → pruebas → recurso con demo → BONUS",
+ "kicker": "MARCA FICTICIA DE EJEMPLO · HISTORIAS",
+ "cuenta": "vicky.pastelera",
+ "inicial": "V",
+ "titulo": "Secuencia",
+ "titulo_em": "Pastelera regalada",
+ "meta": "Ejemplo · hand raiser · HR-CAJA (pregunta de la caja → cuenta → concepto → prueba → recurso + bonus) · keyword PRECIOS",
+ "keyword": "PRECIOS",
+ "rafaga": "ráfaga de 6 frames en 15 min · ideal 21:00 (después de hornear)",
+ "chips": [
+  "HR",
+  "6 frames",
+  "PRECIOS · flow OK",
+  "BONUS · TODO JUNTO"
+ ],
+ "hilo": "A la pastelera a la que le dicen \"caro\" por una torta de 18 mil: hice la cuenta y gana 1.300 la hora, menos que el viaje del delivery (**PASTELERA REGALADA**); el precio también filtra a quién te compra (Meli subió de 16 a 29 mil y le encargaron 3; Caro subió 40% y solo perdió a las del \"para ayer\"); respondé PRECIOS y te llevás la calculadora con 43 productos + los 3 mensajes para el \"está caro\".",
+ "concepto": "PASTELERA REGALADA 🎁 · la que se paga la hora menos que el delivery que lleva su torta",
+ "recurso": {
+  "nombre": "CALCULADORA ANTI-REGALADAS 🧮 (la planilla real se llama «calculadora de costos»)",
+  "volumen": "43 productos ya cargados: tortas, mesas dulces, cajitas, alfajores · te da precio mínimo e ideal",
+  "ancla": "la misma torta de la pregunta, cargada: mínimo 24.800 · ideal 29.700 (demo en pantalla)",
+  "bonus": "LOS 3 MENSAJES QUE MANDO CUANDO ME DICEN \"ESTÁ CARO\" · llega TODO JUNTO en el mismo flow"
+ },
+ "porque": "Es el **HR del jueves** que pidió Vicky, con PRECIOS (flow OK). La pregunta llegó de verdad a la cajita y es la que se hacen todas: abre sola. La cuenta está bien hecha y el giro (\"menos que el delivery\") es más fuerte que el \"pierde plata\" que no cerraba. Las dos pruebas (Meli y Caro) contestan las dos objeciones en orden: \"¿vendo menos?\" y \"¿pierdo clientas?\".",
+ "variante_b": "**HR-COSTO:** F1 \"⏰ te estás pagando 1.300 la hora\" + selfie de shock con la calculadora → F2 la cuenta de la torta de 18 mil → F3 \"el delivery que la lleva cobra más 🛵\" → F4 Meli (16 → 29 mil, 3 encargos) → F5 calculadora + PRECIOS → F6 BONUS. Más corta, sin la cajita, para una semana donde no haya llegado ninguna pregunta.",
+ "gates": [
+  "**Flow PRECIOS**: DM de test respondiendo a la historia (trigger de *story reply*): que entregue la planilla **y** la nota de los 3 mensajes juntas (\"TODO JUNTO\"). Si hoy entrega solo la planilla, sumar la nota al mismo flow.",
+  "**Nombre de la planilla**: el archivo real es «calculadora de costos». O se renombra a «CALCULADORA ANTI-REGALADAS» o la pantalla muestra el nombre real.",
+  "**Capturas reales**: sticker de la cajita con el nombre tachado (F1) · WhatsApp de Meli (F4) · WhatsApp de Caro (F5) · la planilla con la torta cargada (F6) · la nota de los 3 mensajes (F7).",
+  "**Permisos**: Meli y Caro OK (brief). Confirmar que autorizan mostrar el WhatsApp con su nombre.",
+  "**Descanso de PRECIOS**: sin registro de usos; confirmar 7+ días desde el último."
+ ],
+ "reglas": [
+  "**F1 = pregunta real + reacción física exagerada** (\"me desmayé arriba del bizcochuelo 😵\") con dirección de actuación, no \"mi cara cuando\".",
+  "**Test del escéptico**: la cuenta cierra (12.800 → 5.200 → 1.300/h < 1.500 del delivery). Número fuerte en F2.",
+  "**Concepto con nombre propio** que sale de la cuenta (PASTELERA REGALADA) y que después dice una clienta en la captura (\"no regala\").",
+  "**Prueba cruda** con capturas literales; Caro muestra el costo real de subir (perdió 2) y por eso se cree.",
+  "**Recurso ABISMAL**: nombre con actitud + volumen (43) + ancla/demo con la MISMA torta + BONUS con TODO JUNTO.",
+  "**CTA en UNA caja** + re-CTA en el BONUS. Sin pd que pida datos.",
+  "**Registro Ramiro en la voz de Vicky**: frase cortada (\"le quedan 5.200...\"), escalada (\"tengo PRUEBAS ➡️\" → BONUS), remate seco (\"no se extrañan 😂\"), puteada censurada light (\"c*rajo\").",
+  "Sin \"no es X, es Y\": el reencuadre va con la cuenta, no con una antítesis."
+ ],
+ "autoeval": {
+  "debilidades": [
+   "la calculadora tiene que existir con ese nombre (gate)",
+   "F3 depende de que la opinión polarizante suene a la persona",
+   "sin las capturas reales de Meli y Caro, la prueba se cae"
+  ],
+  "gancho": 9,
+  "hilo": 9,
+  "prueba": 9,
+  "recurso": 9,
+  "cta": 9,
+  "voz": 9,
+  "formato": 9,
+  "subiria": 9,
+  "notas": "Ejemplo pulido después del juez (iteración 2 del loop de calidad)."
+ },
+ "topes": {
+  "frame": 45,
+  "cta": 45,
+  "caja": 15,
+  "duros": false
+ },
+ "compliance": {
+  "prohibir": [],
+  "sin_signos": true,
+  "regex": []
+ },
+ "pie": "ejemplo con **marca y números ficticios** · refe de armado, no publicar",
+ "frames": [
+  {
+   "nombre": "la cajita",
+   "tag": "HOOK GANCHO",
+   "hora": "21:00",
+   "elementos": [
+    {
+     "t": "negra",
+     "txt": "me llegó esto a la *cajita* ⤵️"
+    },
+    {
+     "t": "sticker",
+     "kind": "respuesta de la cajita",
+     "txt": "¿cobrar 18 mil una torta de 2 kg es mucho? mis clientas dicen que está caro 😩"
+    },
+    {
+     "t": "visual",
+     "txt": "VICKY TIRADA BOCA ABAJO SOBRE LA MESADA · MEJILLA EN UN BIZCOCHUELO, HARINA EN LA CARA · UN OJO ABIERTO A CÁMARA · MANGA PASTELERA COLGANDO · CENITAL",
+     "pos": "mid"
+    },
+    {
+     "t": "crema",
+     "txt": "me desmayé arriba del bizcochuelo 😵",
+     "pos": "bot"
+    }
+   ],
+   "produccion": [
+    "**Dirección de actuación:** Vicky \"desmayada\" boca abajo sobre la mesada, la mejilla apoyada en un bizcochuelo, harina en la cara, un ojo abierto mirando a cámara, la manga pastelera colgando de la mano sin vida. Plano cenital, foto tomada por otro.",
+    "**Sticker de respuesta** con la pregunta textual; el nombre de quien preguntó, tachado en rojo.",
+    "**Trazo neón** amarillo del sticker a la caja crema.",
+    "**Música:** W.A. Mozart · Requiem KV626 (Lacrimosa) — el drama."
+   ]
+  },
+  {
+   "nombre": "la cuenta",
+   "tag": "PROBLEMA",
+   "hora": "21:02",
+   "puente": "contesta la pregunta del F1 «¿18 mil es mucho?» (y la continuidad: me desmayé → me levanté)",
+   "elementos": [
+    {
+     "t": "negra",
+     "txt": "me levanté e hice la cuenta *de verdad* 🧮"
+    },
+    {
+     "t": "blanca",
+     "txt": "ingredientes 9.800 + caja y deco 2.100 + luz y gas 900 = 12.800"
+    },
+    {
+     "t": "visual",
+     "txt": "CENITAL DEL CUADERNO CON LA CUENTA A MANO + CALCULADORA · DEDO CON HARINA SEÑALANDO EL 1.300",
+     "pos": "mid"
+    },
+    {
+     "t": "blanca",
+     "txt": "le quedan 5.200... por 4 horas de laburo",
+     "pos": "bot"
+    },
+    {
+     "t": "amarilla",
+     "txt": "1.300 la hora. MENOS que el viaje del delivery.",
+     "pos": "bot"
+    }
+   ],
+   "produccion": [
+    "**La cuenta a mano** en el cuaderno (los mismos números de la pantalla), la calculadora al lado.",
+    "**Test del escéptico:** 9.800 + 2.100 + 900 = 12.800 · 18.000 − 12.800 = 5.200 · 5.200 ÷ 4 = 1.300 · el delivery cobra ~1.500 por viaje. Todo cierra.",
+    "**Música:** phonk slowed."
+   ]
+  },
+  {
+   "nombre": "pastelera regalada",
+   "tag": "CONCEPTO",
+   "hora": "21:04",
+   "puente": "contesta «¿entonces está regalando la torta?» → le pone nombre",
+   "elementos": [
+    {
+     "t": "crema",
+     "txt": "eso tiene nombre: *PASTELERA REGALADA* 🎁"
+    },
+    {
+     "t": "negra",
+     "txt": "y si TODAS te dicen \"caro\"... ojo a quién le estás vendiendo 👀"
+    },
+    {
+     "t": "visual",
+     "txt": "SELFIE CONTRAPICADO CON GORRO DE COCINERA · TROMPITA, CEJA ARRIBA · ÍNDICE A LAS CAJAS",
+     "pos": "mid"
+    },
+    {
+     "t": "blanca",
+     "txt": "y no lo digo de linda. tengo PRUEBAS ➡️",
+     "pos": "bot"
+    }
+   ],
+   "produccion": [
+    "**Concepto con nombre propio** en crema con glow: PASTELERA REGALADA (sale de la cuenta del F2, no de la nada).",
+    "**Opinión polarizante + anticipo de la objeción** con la voz de Vicky (exagerada, graciosa, puteada censurada light).",
+    "**Música:** slowed + reverb (tipo \"Tusa — slowed\")."
+   ]
+  },
+  {
+   "nombre": "Meli y Caro",
+   "tag": "PRUEBA APILADA",
+   "puente": "contesta la promesa «tengo PRUEBAS ➡️»",
+   "hora": "21:06",
+   "elementos": [
+    {
+     "t": "amarilla",
+     "txt": "Meli. tortas en Quilmes. de 16 a *29 mil*."
+    },
+    {
+     "t": "captura",
+     "kind": "whatsapp",
+     "txt": "vicky subí la torta a 29 y me encargaron 3 este finde 😱 una me dijo *por fin alguien q no regala*"
+    },
+    {
+     "t": "amarilla",
+     "txt": "Caro. mesas dulces. subió 40%.",
+     "pos": "mid"
+    },
+    {
+     "t": "captura",
+     "kind": "whatsapp",
+     "txt": "subí 40% y perdí 2 clientas... las que me pedían todo para ayer jaja"
+    },
+    {
+     "t": "crema",
+     "txt": "el precio también *FILTRA* 🍰",
+     "pos": "bot"
+    }
+   ],
+   "direccion": "capturas de WhatsApp de Meli y Caro en zigzag sobre la cocina oscurecida; trazo neón en S.",
+   "musica": "slowed/phonk",
+   "produccion": [
+    "Dos casos que prueban lo mismo van en UN frame (regla 27)."
+   ]
+  },
+  {
+   "nombre": "la calculadora",
+   "tag": "RECURSO + CTA",
+   "hora": "21:10",
+   "puente": "contesta «¿y cuánto tendría que cobrar yo?» con la misma torta de la cajita",
+   "elementos": [
+    {
+     "t": "blanca",
+     "txt": "la torta de la cajita, cargada acá 👇"
+    },
+    {
+     "t": "captura",
+     "kind": "planilla",
+     "txt": "CALCULADORA ANTI-REGALADAS 🧮 · torta 2 kg → mínimo *24.800* · ideal *29.700*"
+    },
+    {
+     "t": "negra",
+     "txt": "43 productos ya cargados. ponés tus ingredientes y listo.",
+     "pos": "bot"
+    },
+    {
+     "t": "amarilla",
+     "txt": "respondé ➡️ \"PRECIOS\" ⬅️ y es tuya ⤵️",
+     "pos": "bot"
+    },
+    {
+     "t": "flecha",
+     "txt": "⤵️",
+     "pos": "bot"
+    }
+   ],
+   "produccion": [
+    "**Demo con el mismo ejemplo:** la planilla real con la torta de la pregunta cargada (mínimo 24.800 · ideal 29.700, contra los 18 mil que cobraba). Foto del monitor con el cursor sobre \"ideal\".",
+    "**Volumen a la vista:** la pestaña con los 43 productos (tortas, mesas dulces, cajitas, alfajores).",
+    "**UNA caja de CTA** con flechas enfrentadas; flecha neón ↓ al cajón.",
+    "**Música:** reggaetón viejo en slowed (tipo \"Gasolina — slowed\")."
+   ]
+  },
+  {
+   "nombre": "BONUS",
+   "tag": "BONUS · RE-CTA",
+   "hora": "21:12",
+   "puente": "contesta lo último que queda: «¿y qué le contesto a la que me dice \"está caro\"?»",
+   "elementos": [
+    {
+     "t": "amarilla",
+     "txt": "BONUS: LOS 3 MENSAJES QUE MANDO CUANDO ME DICEN \"ESTÁ CARO\""
+    },
+    {
+     "t": "captura",
+     "kind": "nota del celu",
+     "txt": "mensaje 1 visible · el 2 y el 3, difuminados"
+    },
+    {
+     "t": "negra",
+     "txt": "copiar y pegar. sin pedir perdón 💅",
+     "pos": "bot"
+    },
+    {
+     "t": "crema",
+     "txt": "respondé \"PRECIOS\" y te llega TODO JUNTO ⬇️",
+     "pos": "bot"
+    },
+    {
+     "t": "respuesta",
+     "txt": "PRECIOS"
+    }
+   ],
+   "produccion": [
+    "**Captura real de la nota** del celular con los 3 mensajes: se lee el primero, los otros dos difuminados (dan ganas de pedirlos).",
+    "**Re-CTA en el frame siguiente** (no dos cajas pegadas), cierra con \"TODO JUNTO\".",
+    "**Música:** Bad Bunny · \"Tití Me Preguntó\"."
+   ]
+  }
+ ]
+}

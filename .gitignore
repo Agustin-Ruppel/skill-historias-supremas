@@ -1,0 +1,5 @@
+.DS_Store
+__pycache__/
+*.pyc
+# salidas de la skill si la corrés dentro del repo
+historias/

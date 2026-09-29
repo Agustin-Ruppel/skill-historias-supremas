@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Secuencia de historias</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0a08; --panel:#15120d; --panel2:#1b170f; --line:#3a3121; --line2:#2a2419;
+  --gold:#d9ab4f; --gold2:#f2c14e; --cream:#efe4c6; --white:#f8f5ee; --ink:#141210;
+  --muted:#9b917c; --muted2:#6f6756; --red:#d6453d; --ok:#5fae7b;
+  --serif:"Fraunces",Georgia,"Times New Roman",serif;
+  --sans:"Inter",-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--white);font-family:var(--sans);-webkit-font-smoothing:antialiased;padding:48px 16px 64px;font-feature-settings:"calt" 0}
+code{font-family:var(--mono);font-size:.92em;background:rgba(255,255,255,.07);padding:0 4px;border-radius:3px}
+.wrap{max-width:1060px;margin:0 auto}
+header{text-align:center;margin-bottom:44px;padding-bottom:32px;border-bottom:1px solid var(--line2)}
+.kicker{font-family:var(--mono);font-size:11px;letter-spacing:.42em;color:var(--gold);text-transform:uppercase;margin-bottom:18px}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,5.4vw,52px);line-height:1.05;color:var(--white)}
+h1 em{font-style:italic;color:var(--gold)}
+.meta{margin-top:14px;color:var(--muted);font-size:14.5px;line-height:1.6}
+.meta b{color:var(--gold2);font-weight:700;letter-spacing:.04em}
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:16px}
+.chip{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--line);color:var(--muted);padding:5px 10px;border-radius:99px}
+.chip.t{border-color:var(--gold);color:var(--gold)}
+.grid{display:flex;flex-wrap:wrap;justify-content:center;gap:28px 22px;margin-bottom:46px}
+.cell{width:300px;max-width:100%}
+.label{font-family:var(--mono);font-size:11px;letter-spacing:.3em;color:var(--muted);text-transform:uppercase;text-align:center;margin-bottom:10px}
+.label b{color:var(--gold);font-weight:600}
+.label .tag{display:block;margin-top:4px;font-size:9.5px;letter-spacing:.22em;color:var(--muted2)}
+.puente{font-family:var(--serif);font-style:italic;font-size:12px;line-height:1.35;color:#c9b98f;text-align:center;margin:0 6px 9px;min-height:16px}
+.puente:before{content:"↳ "}
+.hilo{max-width:760px;margin:18px auto 0;border:1px solid var(--line);border-radius:12px;padding:12px 16px;text-align:left}
+.hilo b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.3em;color:var(--gold);font-weight:600;margin-bottom:5px}
+.hilo span{font-family:var(--serif);font-size:15px;line-height:1.45;color:#eadfc4}
+.phone{position:relative;height:540px;border-radius:26px;border:1px solid var(--line);background:radial-gradient(120% 70% at 50% 100%,#2a2113 0%,#141109 45%,#0e0c08 100%);padding:12px 12px 14px;display:flex;flex-direction:column;overflow:hidden}
+.bars{display:flex;gap:4px;margin-bottom:10px}
+.bars i{flex:1;height:2.5px;border-radius:2px;background:#4a4230}
+.bars i.on{background:var(--gold)}
+.who{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.av{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#f4d27a,#b8862b);color:#2a1d05;font-family:var(--serif);font-weight:700;font-size:14px;display:grid;place-items:center;border:1.5px solid #6b5220}
+.who .h{font-size:12.5px;font-weight:600;line-height:1.1}
+.who .h small{display:block;font-weight:400;color:var(--muted2);font-size:10.5px}
+.zone{display:flex;flex-direction:column;gap:7px}
+.zone.mid{flex:1;justify-content:center;margin:8px 0}
+.zone.bot{margin-top:auto}
+.bx{font-size:13px;line-height:1.38;padding:8px 10px;border-radius:3px;font-weight:600;max-width:100%;word-wrap:break-word}
+.bx.negra{background:#0f0e0c;color:#fff;border:1px solid #2c271d}
+.bx.blanca{background:var(--white);color:var(--ink)}
+.bx.crema{background:var(--cream);color:#2a2419;font-weight:500}
+.bx.amarilla{background:var(--gold2);color:#1a1405}
+.bx.center{text-align:center;align-self:center}
+.bx.small{font-size:11.5px;padding:6px 9px}
+.bx.negra mark,.bx.captura mark{background:none;color:var(--gold2)}
+.bx.blanca mark,.bx.crema mark{background:var(--gold2);color:#1a1405;padding:0 3px;border-radius:2px}
+.bx.amarilla mark{background:#1a1405;color:var(--gold2);padding:0 3px;border-radius:2px}
+.cap{background:#1c1b20;border:1px solid #34323b;border-radius:12px;padding:10px 11px;font-size:12px;line-height:1.4;color:#e9e7ee}
+.cap .top{display:flex;align-items:center;gap:7px;margin-bottom:7px}
+.cap .dot{width:18px;height:18px;border-radius:50%;background:#4a4855}
+.cap .strike{height:8px;width:72px;border-radius:5px;background:var(--red);transform:rotate(-2deg)}
+.cap .kind{margin-left:auto;font-family:var(--mono);font-size:9px;letter-spacing:.18em;color:#8d8a99;text-transform:uppercase}
+.cap mark{background:none;color:var(--gold2);font-weight:700}
+.cap .rows{display:flex;flex-direction:column;gap:6px}
+.cap .row{display:flex;justify-content:space-between;align-items:center;font-size:11.5px;color:#cfccd8}
+.cap .row .strike{width:44px}
+.doc{background:#fff;color:#1f1f1f;border-radius:10px;padding:9px 11px;font-size:11.5px;font-weight:600;display:flex;align-items:center;gap:8px}
+.doc .ic{width:15px;height:18px;border-radius:2px;background:#4285f4;flex:none;position:relative}
+.doc .ic:after{content:"";position:absolute;left:3px;right:3px;top:5px;height:1.5px;background:#fff;box-shadow:0 3px 0 #fff,0 6px 0 #fff}
+.doc.loom .ic{background:#625df5;border-radius:50%;width:18px}
+.doc.loom .ic:after{display:none}
+.doc .dur{margin-left:auto;font-family:var(--mono);font-size:10px;color:#666}
+.vis{flex:1;min-height:90px;border:1px dashed #5a4c30;border-radius:12px;display:grid;place-items:center;text-align:center;padding:14px;font-family:var(--mono);font-size:10px;letter-spacing:.22em;line-height:1.9;color:#8f8062;text-transform:uppercase;background:radial-gradient(60% 60% at 50% 50%,rgba(217,171,79,.08),transparent)}
+.vid{flex:1;min-height:120px;border:1px solid #3d3322;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:14px;background:radial-gradient(60% 60% at 50% 45%,rgba(217,171,79,.12),transparent)}
+.vid .play{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--gold);display:grid;place-items:center}
+.vid .play:after{content:"";border-left:12px solid var(--gold);border-top:7.5px solid transparent;border-bottom:7.5px solid transparent;margin-left:3px}
+.vid p{font-family:var(--serif);font-style:italic;font-size:12.5px;line-height:1.45;color:#d8cdb1;text-align:center}
+.vid .dur{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;color:var(--muted2)}
+.stk{align-self:center;background:#fff;color:#111;border-radius:12px;padding:10px 12px;min-width:74%;box-shadow:0 6px 18px rgba(0,0,0,.35);font-size:12px;font-weight:700;text-align:center}
+.stk .q{margin-bottom:8px}
+.stk .op{display:flex;flex-direction:column;gap:5px}
+.stk .op span{border:1px solid #ddd;border-radius:8px;padding:6px;font-weight:600;font-size:11.5px}
+.stk.question .ans{background:#eee;border-radius:8px;padding:8px;color:#888;font-weight:500;font-size:11px}
+.stk.slider .track{height:6px;border-radius:4px;background:linear-gradient(90deg,#f7c6d9,#e7336b);margin-top:8px}
+.stk.countdown{background:linear-gradient(135deg,#6e3bf2,#c13bf2);color:#fff}
+.stk.countdown .num{font-family:var(--mono);font-size:18px;letter-spacing:.12em;margin-top:4px}
+.stk.link{background:#fff;color:#2563eb;min-width:auto;padding:7px 12px}
+.stk.mencion{background:none;box-shadow:none;color:#fff;border-bottom:1px solid #fff;border-radius:0;padding:2px 0;min-width:auto}
+.stk.musica{background:rgba(255,255,255,.14);color:#fff;min-width:auto;padding:6px 10px;font-weight:500;font-size:11px;box-shadow:none}
+.arrow{align-self:center;font-size:20px;line-height:1;filter:drop-shadow(0 0 6px rgba(242,193,78,.8))}
+.neon{height:2px;background:linear-gradient(90deg,transparent,var(--gold2),transparent);box-shadow:0 0 10px var(--gold2);margin:2px 16px}
+.reply{margin-top:10px;border:1px solid #4a4230;border-radius:99px;padding:8px 14px;font-size:11.5px;color:var(--muted);display:flex;gap:8px;align-items:center}
+.reply b{font-family:var(--mono);color:var(--white);letter-spacing:.08em}
+.reply span{margin-left:auto;color:var(--gold);font-weight:700;font-family:var(--mono);font-size:10.5px}
+.notes{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-bottom:22px}
+.card{background:var(--panel);border:1px solid var(--line2);border-radius:14px;padding:16px 18px}
+.card h3{font-family:var(--mono);font-size:11px;letter-spacing:.26em;color:var(--gold);text-transform:uppercase;margin-bottom:10px;font-weight:600}
+.card p,.card li{font-size:13px;line-height:1.55;color:#d9d2c1}
+.card p+p{margin-top:8px}
+.card ul{padding-left:18px}
+.card li+li{margin-top:5px}
+.card strong{color:#fff}
+.card em{font-family:var(--serif);color:#cdbf9c}
+.card.gates{border-color:#6b2a24;background:linear-gradient(180deg,#1b100d,#140e0b)}
+.card.gates h3{color:#ef7a6e}
+.card.gates ol{padding-left:18px}
+.card.gates li{font-size:13px;line-height:1.55;color:#e6d6cf}
+.card.rules h3{color:var(--muted)}
+.card.judge{border-color:#5a4a24}
+.scores{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:10px}
+.scores span{display:flex;flex-direction:column;align-items:center;font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;color:var(--muted);text-align:center}
+.scores i{font-style:normal;font-family:var(--serif);font-size:22px;font-weight:600;line-height:1.1}
+.scores .ok i{color:#7cc494}.scores .lo i{color:#e59b5b}
+.why{background:var(--panel2);border:1px solid var(--line2);border-radius:14px;padding:18px 20px;margin-bottom:22px}
+.why h3{font-family:var(--mono);font-size:11px;letter-spacing:.26em;color:var(--gold);text-transform:uppercase;margin-bottom:10px}
+.why p{font-size:13.5px;line-height:1.6;color:#ddd5c3}
+.why.rev{border-color:#6b2a24;background:linear-gradient(180deg,#1b110e,#15100c);margin-bottom:34px}
+.why.rev h3{color:#ef7a6e}
+.why.rev ul{padding-left:18px;margin-top:8px}
+.why.rev li{font-size:13px;line-height:1.55;color:#e6d6cf}
+.why.rev li+li{margin-top:4px}
+.why.rev p.ok{margin-top:10px;color:#a9d6b6}
+footer{text-align:center;font-family:var(--mono);font-size:11px;letter-spacing:.24em;color:var(--muted2);margin-top:34px}
+footer b{color:var(--gold);font-weight:600}
+@media (max-width:420px){.cell{width:100%}.phone{height:520px}}
+@media print{body{padding:16px}.phone{break-inside:avoid}}
+</style>
+</head>
+<body>
+<!--
+  PLANTILLA DE SECUENCIA · skill historias-ig
+  Claude: copiá este archivo y SOLO reemplazá el JSON de #data. No toques CSS ni JS.
+  Tipos de elemento (campo "t"):
+    negra | blanca | crema | amarilla   → caja de texto (usar *palabra* para resaltar en amarillo). Opcionales: "pos":"top|mid|bot", "center":true, "small":true
+    captura   → {"t":"captura","kind":"dm|whatsapp|discord|dashboard|perfil|planilla|herramienta","txt":"...","rows":["producto A","producto B"]}
+    doc       → {"t":"doc","txt":"ENTREGABLES SYK 2025","kind":"doc|loom|pdf|notion","dur":"23:15"}
+    visual    → {"t":"visual","txt":"SELFIE SERIO SEÑALANDO LA CAPTURA"}   (placeholder de foto/fondo)
+    video     → {"t":"video","txt":"premisa hablada...","dur":"15 s"}
+    sticker   → {"t":"sticker","kind":"encuesta|pregunta|slider|countdown|link|mencion|musica","txt":"pregunta","opciones":["A","B"]}
+    flecha    → {"t":"flecha","txt":"⤵️"}      neon → {"t":"neon"}
+    respuesta → {"t":"respuesta","txt":"KEYWORD"}  (barra "Enviar mensaje" al pie del frame de CTA)
+  Posición por defecto: cajas de texto arriba ("top"); visual/video/captura/doc/sticker al medio ("mid"); respuesta abajo.
+  OBLIGATORIOS para el hilo: "hilo" (la secuencia en una frase) y, en cada frame desde el 2, "puente" (qué pregunta,
+  frase cortada o promesa del frame anterior contesta este frame). Se muestran arriba de cada teléfono.
+  Campos opcionales: por frame "hora" (ej. "19:05", reemplaza "ahora"), "fallback" (qué hacer sin captura),
+  "direccion" (actuación: expresión + gesto + encuadre + objeto) y "musica" (concreta) · "concepto" · "recurso"
+  {nombre, volumen, ancla, bonus} · "autoeval" {gancho, hilo, prueba, recurso, cta, voz, formato, subiria, notas} ·
+  "sueltas": [ {mismo formato que un frame} ] = historias sueltas del día fuera de la ráfaga · "variante_b" (texto) ·
+  "revision": {"metrica":"38 resp / 4.100 = 0,93%","veredicto":"…","problemas":["F2: …"],"funciona":["…"]} (modo revisión).
+-->
+<script id="data" type="application/json">
+{
+  "kicker": "MARCA · HISTORIAS",
+  "cuenta": "tu.cuenta",
+  "inicial": "T",
+  "titulo": "Secuencia",
+  "titulo_em": "Nombre de la secuencia",
+  "meta": "Jueves 3-oct · hand raiser · estructura A · Objeción→Sistema→Recurso",
+  "keyword": "KEYWORD",
+  "rafaga": "ráfaga 10 a 20 min · ideal 19-21hs",
+  "chips": ["HR", "5 frames", "keyword descansó 9 días"],
+  "frames": [
+    {"nombre": "hook", "tag": "HOOK GANCHO", "elementos": [
+      {"t": "negra", "txt": "texto de ejemplo con *palabra* clave"},
+      {"t": "visual", "txt": "SELFIE O FOTO DEL MOMENTO"}
+    ], "produccion": ["**Qué grabar:** descripción.", "Fallback: ..."]}
+  ],
+  "porque": "Por qué esta secuencia hoy, en 2-3 líneas.",
+  "gates": ["Flow KEYWORD en ManyChat armado + DM de test."],
+  "reglas": ["Escasez solo en el frame de CTA."],
+  "pie": "refe interna de armado · <b>no publicar esta placa</b> · capturas y fotos reales van en IG"
+}
+</script>
+<div class="wrap" id="app"></div>
+<script>
+(function(){
+  const D = JSON.parse(document.getElementById('data').textContent);
+  const esc = s => String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  const hl = s => esc(s).replace(/\*([^*]+)\*/g,'<mark>$1</mark>');
+  const md = s => esc(s).replace(/`([^`]+)`/g,'<code>$1</code>').replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>').replace(/\*([^*]+)\*/g,'<em>$1</em>');
+  const pad = n => String(n).padStart(2,'0');
+  const total = D.frames.length;
+  const box = e => `<div class="bx ${e.t}${e.center?' center':''}${e.small?' small':''}">${hl(e.txt)}</div>`;
+  function el(e){
+    switch(e.t){
+      case 'negra': case 'blanca': case 'crema': case 'amarilla': return box(e);
+      case 'captura': {
+        const rows = (e.rows||[]).map(r=>`<div class="row"><span>${esc(r)}</span><i class="strike"></i></div>`).join('');
+        return `<div class="cap"><div class="top"><i class="dot"></i><i class="strike"></i><span class="kind">${esc(e.kind||'captura')}</span></div>${e.txt?`<div>${hl(e.txt)}</div>`:''}${rows?`<div class="rows">${rows}</div>`:''}</div>`;
+      }
+      case 'doc': return `<div class="doc ${esc(e.kind||'doc')}"><i class="ic"></i><span>${esc(e.txt)}</span>${e.dur?`<span class="dur">${esc(e.dur)}</span>`:''}</div>`;
+      case 'visual': return `<div class="vis">${esc(e.txt)}</div>`;
+      case 'video': return `<div class="vid"><div class="play"></div>${e.txt?`<p>“${esc(e.txt)}”</p>`:''}${e.dur?`<span class="dur">VIDEO · ${esc(e.dur)}</span>`:''}</div>`;
+      case 'sticker': {
+        const k = e.kind||'encuesta';
+        if(k==='encuesta') return `<div class="stk"><div class="q">${esc(e.txt)}</div><div class="op">${(e.opciones||['Sí','No']).map(o=>`<span>${esc(o)}</span>`).join('')}</div></div>`;
+        if(k==='pregunta') return `<div class="stk question"><div class="q">${esc(e.txt||'Haceme una pregunta')}</div><div class="ans">Escribí algo…</div></div>`;
+        if(k==='slider') return `<div class="stk slider"><div class="q">${esc(e.txt)}</div><div class="track"></div></div>`;
+        if(k==='countdown') return `<div class="stk countdown"><div class="q">${esc(e.txt)}</div><div class="num">${esc(e.valor||'02 : 14 : 33')}</div></div>`;
+        if(k==='link') return `<div class="stk link">🔗 ${esc(e.txt)}</div>`;
+        if(k==='mencion') return `<div class="stk mencion">@${esc(String(e.txt).replace(/^@/,''))}</div>`;
+        if(k==='musica') return `<div class="stk musica">♪ ${esc(e.txt)}</div>`;
+        return `<div class="stk">${esc(e.txt)}</div>`;
+      }
+      case 'flecha': return `<div class="arrow">${esc(e.txt||'⤵️')}</div>`;
+      case 'neon': return `<div class="neon"></div>`;
+      default: return '';
+    }
+  }
+  const defPos = e => e.pos || (['negra','blanca','crema','amarilla','flecha'].includes(e.t) ? 'top' : 'mid');
+  function phone(f,i,suelta){
+    const els = f.elementos||[];
+    const reply = els.find(e=>e.t==='respuesta');
+    const z = {top:[],mid:[],bot:[]};
+    els.filter(e=>e.t!=='respuesta').forEach(e=>z[defPos(e)].push(el(e)));
+    const n = suelta ? 1 : total, on = suelta ? 0 : i;
+    const bars = Array.from({length:n},(_,k)=>`<i class="${k===on?'on':''}"></i>`).join('');
+    const num = suelta ? 'S' + (i+1) : pad(i+1);
+    return `<div class="cell">
+      <div class="label"><b>${num}</b> · ${esc(f.nombre||'')}${f.tag?`<span class="tag">[${esc(f.tag)}]</span>`:''}</div>
+      ${!suelta ? `<div class="puente">${i===0 ? (D.hilo ? 'abre' : '') : esc(f.puente||'¿de dónde viene este frame?')}</div>` : ''}
+      <div class="phone">
+        <div class="bars">${bars}</div>
+        <div class="who"><div class="av">${esc(D.inicial||'•')}</div><div class="h">${esc(D.cuenta)}<small>${esc(f.hora||'ahora')}</small></div></div>
+        <div class="zone top">${z.top.join('')}</div>
+        <div class="zone mid">${z.mid.join('')}</div>
+        <div class="zone bot">${z.bot.join('')}</div>
+        ${reply?`<div class="reply">Enviar mensaje <b>${esc(reply.txt)}</b><span>Enviar</span></div>`:''}
+      </div></div>`;
+  }
+  const note = (f,label) => {
+    const p = (f.produccion||[]).map(x=>`<p>${md(x)}</p>`).join('');
+    const h = f.hablado ? `<p><strong>Hablado (premisa, no guion):</strong> <em>“${esc(f.hablado)}”</em></p>` : '';
+    const fb = f.fallback ? `<p><strong>Fallback sin captura:</strong> ${md(f.fallback)}</p>` : '';
+    const hr = f.hora ? `<p><strong>Hora:</strong> ${esc(f.hora)}</p>` : '';
+    const mu = f.musica ? `<p><strong>Música:</strong> ♪ ${esc(f.musica)}</p>` : '';
+    const di = f.direccion ? `<p><strong>Dirección:</strong> ${md(f.direccion)}</p>` : '';
+    return (p||h||fb||mu||di) ? `<div class="card"><h3>${label} · Producción</h3>${di}${h}${p}${fb}${mu}${hr}</div>` : '';
+  };
+  const S = D.sueltas || [];
+  const notes = D.frames.map((f,i)=>note(f,pad(i+1))).join('') + S.map((f,i)=>note(f,'S'+(i+1)+' suelta')).join('');
+  const sueltas = S.length ? `<div class="label" style="margin:6px 0 14px"><b>Sueltas del día</b> · fuera de la ráfaga</div><section class="grid">${S.map((f,i)=>phone(f,i,true)).join('')}</section>` : '';
+  const gates = (D.gates||[]).length ? `<div class="card gates"><h3>⚠ Gates antes de publicar</h3><ol>${D.gates.map(g=>`<li>${md(g)}</li>`).join('')}</ol></div>` : '';
+  const reglas = (D.reglas||[]).length ? `<div class="card rules"><h3>Reglas aplicadas</h3><ul>${D.reglas.map(r=>`<li>${md(r)}</li>`).join('')}</ul></div>` : '';
+  const varb = D.variante_b ? `<div class="card"><h3>Variante B</h3><p>${md(D.variante_b)}</p></div>` : '';
+  const RC = D.recurso || {};
+  const conc = (D.concepto || RC.nombre) ? `<div class="card"><h3>Concepto y recurso</h3>${D.concepto?`<p><strong>Concepto:</strong> ${md(D.concepto)}</p>`:''}${RC.nombre?`<p><strong>Recurso:</strong> ${esc(RC.nombre)}${RC.volumen?` · ${esc(RC.volumen)}`:''}</p>`:''}${RC.ancla?`<p><strong>Ancla:</strong> ${esc(RC.ancla)}</p>`:''}${RC.bonus?`<p><strong>Bonus:</strong> ${esc(RC.bonus)}</p>`:''}</div>` : '';
+  const AE = D.autoeval;
+  const KS = [['gancho','Gancho'],['hilo','Hilo'],['prueba','Prueba'],['recurso','Recurso'],['cta','CTA'],['voz','Voz'],['formato','Formato'],['subiria','¿La subiría?']];
+  const juez = AE ? `<div class="card judge"><h3>Juez · nivel Ramiro</h3><div class="scores">${KS.map(([k,l])=>`<span class="${Number(AE[k])>=9?'ok':'lo'}"><i>${esc(AE[k]??'–')}</i>${l}</span>`).join('')}</div>${AE.notas?`<p>${md(AE.notas)}</p>`:''}</div>` : '';
+  const R = D.revision;
+  const revision = R ? `<div class="why rev"><h3>Revisión de la original${R.metrica?` · ${esc(R.metrica)}`:''}</h3>
+      ${R.veredicto?`<p>${md(R.veredicto)}</p>`:''}
+      ${(R.problemas||[]).length?`<ul>${R.problemas.map(p=>`<li>${md(p)}</li>`).join('')}</ul>`:''}
+      ${(R.funciona||[]).length?`<p class="ok"><strong>Se mantiene:</strong> ${R.funciona.map(md).join(' · ')}</p>`:''}</div>` : '';
+  document.title = `${D.titulo} · ${D.titulo_em}`;
+  document.getElementById('app').innerHTML = `
+    <header>
+      <div class="kicker">${esc(D.kicker)}</div>
+      <h1>${esc(D.titulo)} · <em>${esc(D.titulo_em)}</em></h1>
+      <div class="meta">${md(D.meta)}${D.keyword?`<br>keyword <b>${esc(D.keyword)}</b>`:''}${D.rafaga?` · ${esc(D.rafaga)}`:''}</div>
+      ${(D.chips||[]).length?`<div class="chips">${D.chips.map((c,i)=>`<span class="chip ${i===0?'t':''}">${esc(c)}</span>`).join('')}</div>`:''}
+      ${D.hilo?`<div class="hilo"><b>LA LÍNEA</b><span>${md(D.hilo)}</span></div>`:''}
+    </header>
+    ${revision}
+    ${sueltas}
+    ${S.length?`<div class="label" style="margin:6px 0 14px"><b>Secuencia</b> · ráfaga</div>`:''}
+    <section class="grid">${D.frames.map((f,i)=>phone(f,i,false)).join('')}</section>
+    ${D.porque?`<div class="why"><h3>Por qué esta secuencia</h3><p>${md(D.porque)}</p></div>`:''}
+    <section class="notes">${juez}${conc}${notes}${gates}${reglas}${varb}</section>
+    <footer>${D.pie ? md(D.pie).replace(/&lt;b&gt;(.*?)&lt;\/b&gt;/g,'<b>$1</b>').replace(/<strong>/g,'<b>').replace(/<\/strong>/g,'</b>') : 'refe interna de armado · <b>no publicar esta placa</b>'}</footer>`;
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calendario de historias</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0a08; --panel:#15120d; --panel2:#1b170f; --line:#3a3121; --line2:#2a2419;
+  --gold:#d9ab4f; --gold2:#f2c14e; --white:#f8f5ee; --muted:#9b917c; --muted2:#6f6756;
+  --serif:"Fraunces",Georgia,serif; --sans:"Inter",-apple-system,"Segoe UI",Helvetica,Arial,sans-serif; --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  --HR:#5fae7b; --CTA:#f2c14e; --WN:#e0584d; --POLL:#6aa6e8; --AWARE:#a98be8; --PRUEBA:#4fc1b5; --TEASER:#f08a3c; --LIBRE:#8d8573; --PRESENTACION:#e27ab0; --QA:#6aa6e8;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--white);font-family:var(--sans);-webkit-font-smoothing:antialiased;padding:48px 16px 64px;font-feature-settings:"calt" 0}
+.wrap{max-width:1180px;margin:0 auto}
+header{text-align:center;margin-bottom:34px;padding-bottom:28px;border-bottom:1px solid var(--line2)}
+.kicker{font-family:var(--mono);font-size:11px;letter-spacing:.42em;color:var(--gold);text-transform:uppercase;margin-bottom:16px}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(32px,5.6vw,56px);line-height:1.05}
+h1 em{font-style:italic;color:var(--gold)}
+.meta{margin-top:12px;color:var(--muted);font-size:14.5px;line-height:1.6;max-width:760px;margin-left:auto;margin-right:auto}
+.meta b{color:var(--white)}
+.legend{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 14px;margin:22px 0 8px}
+.lg{display:flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase}
+.lg i{width:10px;height:10px;border-radius:3px}
+.win{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:10px}
+.win span{font-size:12.5px;border:1px solid #6b2a24;background:#1b100d;color:#f0b3aa;border-radius:99px;padding:5px 12px}
+.dow,.week{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
+.dow{margin-bottom:8px}
+.dow div{font-family:var(--mono);font-size:10.5px;letter-spacing:.3em;color:var(--muted2);text-align:center;text-transform:uppercase}
+.week{margin-bottom:6px}
+.day{position:relative;min-height:150px;background:var(--panel);border:1px solid var(--line2);border-radius:12px;padding:10px 10px 11px;display:flex;flex-direction:column;gap:6px;overflow:hidden}
+.day.out{background:transparent;border-style:dashed;opacity:.35}
+.day.inwin{box-shadow:inset 0 0 0 1px rgba(224,88,77,.55)}
+.day .n{font-family:var(--serif);font-size:20px;font-weight:600;line-height:1;color:var(--white)}
+.day .n small{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;color:var(--muted2);margin-left:6px;font-weight:400}
+.day:before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--c,transparent)}
+.badge{align-self:flex-start;font-family:var(--mono);font-size:9.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:3px 7px;border-radius:5px;color:#111;background:var(--c)}
+.t{font-size:12.5px;line-height:1.35;color:#e8e1cf;font-weight:500}
+.s{font-size:10.5px;color:var(--muted);line-height:1.35}
+.foot{margin-top:auto;display:flex;flex-wrap:wrap;gap:5px;align-items:center}
+.kw{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.08em;color:var(--gold2);border:1px solid #5a4a24;border-radius:5px;padding:2px 6px}
+.fr{font-family:var(--mono);font-size:9.5px;color:var(--muted2)}
+.mix{display:flex;flex-wrap:wrap;gap:6px 12px;justify-content:flex-end;font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--muted2);margin:0 0 18px;padding:0 4px}
+.mix b{color:var(--muted)}
+.mix .ok{color:#7cc494}.mix .warn{color:#e59b5b}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;margin-top:26px}
+.card{background:var(--panel);border:1px solid var(--line2);border-radius:14px;padding:16px 18px}
+.card h3{font-family:var(--mono);font-size:11px;letter-spacing:.26em;color:var(--gold);text-transform:uppercase;margin-bottom:10px;font-weight:600}
+.card li{font-size:13px;line-height:1.55;color:#d9d2c1}
+.card ul{padding-left:18px}.card li+li{margin-top:5px}
+.card strong{color:#fff}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+th{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted2);text-align:left;padding:0 8px 8px 0;font-weight:400}
+td{padding:7px 8px 7px 0;border-top:1px solid var(--line2);color:#d9d2c1;vertical-align:top}
+td b{font-family:var(--mono);color:var(--gold2);letter-spacing:.06em}
+.st{font-family:var(--mono);font-size:10px;padding:2px 6px;border-radius:4px;border:1px solid}
+.st.ok{color:#7cc494;border-color:#2f5a3c}.st.falta{color:#ef7a6e;border-color:#6b2a24}.st.probar{color:#e5b85b;border-color:#5a4a24}.st.a-mano{color:#9fb7e8;border-color:#34466b}
+.rc{font-size:10.5px;color:#cbbf9f;line-height:1.35}.rc:before{content:"🎁 "}
+.rsp{font-family:var(--mono);font-size:9.5px;color:#7cc494}
+footer{text-align:center;font-family:var(--mono);font-size:11px;letter-spacing:.24em;color:var(--muted2);margin-top:34px}
+@media (max-width:860px){
+  .dow{display:none}
+  .week{grid-template-columns:1fr;gap:8px}
+  .day{min-height:auto}
+  .day.out{display:none}
+  .mix{justify-content:flex-start}
+}
+</style>
+</head>
+<body>
+<!--
+  PLANTILLA DE CALENDARIO · skill historias-ig
+  Claude: copiá este archivo y SOLO reemplazá el JSON de #data. No toques CSS ni JS.
+  tipo ∈ HR | CTA | WN | POLL | QA | AWARE | PRUEBA | TEASER | LIBRE | PRESENTACION
+  Días sin historia planificada: no los incluyas (se muestran vacíos) o poné "tipo":"LIBRE".
+  flow de keyword ∈ ok | falta | probar
+  "vista": "mes" | "semana" (opcional; por defecto semana si los días planificados abarcan ≤10 días)
+  QA es alias de POLL (caja de preguntas) y se muestra como "Q&A".
+-->
+<script id="data" type="application/json">
+{
+  "kicker": "MARCA · CALENDARIO DE HISTORIAS",
+  "titulo": "Octubre",
+  "titulo_em": "2026",
+  "meta": "Objetivo del mes · 8000 leads · ventana de oferta la última semana",
+  "ventanas": [{"desde": "2026-10-26", "hasta": "2026-10-31", "nombre": "WHY NOW · sube el programa el 1-nov"}],
+  "mix_objetivo": {"HR": "2-3", "CTA": "2", "POLL": "1"},
+  "dias": [
+    {"fecha": "2026-10-01", "tipo": "HR", "titulo": "Tema del día", "estructura": "A · Objeción→Sistema→Recurso", "keyword": "SISTEMA", "frames": 5, "hora": "19-21hs"}
+  ],
+  "keywords": [{"kw": "SISTEMA", "recurso": "Notion del sistema", "flow": "ok", "usos": ["01-oct"]}],
+  "reglas": ["Keyword descansa 7+ días entre usos."],
+  "pie": "calendario interno · se ajusta cada domingo con el registro de resultados"
+}
+</script>
+<div class="wrap" id="app"></div>
+<script>
+(function(){
+  const D = JSON.parse(document.getElementById('data').textContent);
+  const esc = s => String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  const md = s => esc(s).replace(/`([^`]+)`/g,'<code>$1</code>').replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>');
+  const NAMES = {HR:'Hand raiser',CTA:'CTA directo',WN:'Why now',POLL:'Encuesta',QA:'Q&A',AWARE:'Awareness',PRUEBA:'Prueba social',TEASER:'Teaser',LIBRE:'Libre',PRESENTACION:'Qué hago'};
+  const MIXKEY = t => t === 'QA' ? 'POLL' : t;
+  const MIXNAME = {POLL:'Encuesta/Q&A'};
+  const DOW = ['lun','mar','mié','jue','vie','sáb','dom'];
+  const parse = s => { const [y,m,d] = s.split('-').map(Number); return new Date(y, m-1, d); };
+  const key = d => `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+  const byDate = {}; (D.dias||[]).forEach(x => byDate[x.fecha] = x);
+  const dates = Object.keys(byDate).sort();
+  const first = dates.length ? parse(dates[0]) : new Date();
+  const monthStart = new Date(first.getFullYear(), first.getMonth(), 1);
+  const lastPlanned = dates.length ? parse(dates[dates.length-1]) : monthStart;
+  const monthEnd = new Date(first.getFullYear(), first.getMonth()+1, 0);
+  const spanDays = (lastPlanned - first) / 864e5 + 1;
+  const weekMode = D.vista === 'semana' || (D.vista !== 'mes' && spanDays <= 10);
+  const from = weekMode ? first : monthStart;
+  const end = weekMode ? lastPlanned : (lastPlanned > monthEnd ? lastPlanned : monthEnd);
+  const start = new Date(from); start.setDate(start.getDate() - ((start.getDay()+6)%7));
+  const wins = (D.ventanas||[]).map(w => ({a:parse(w.desde), b:parse(w.hasta)}));
+  const inWin = d => wins.some(w => d >= w.a && d <= w.b);
+  const used = new Set((D.dias||[]).map(x=>x.tipo));
+  let html = '';
+  let cur = new Date(start);
+  while (cur <= end) {
+    let row = '', counts = {};
+    for (let i = 0; i < 7; i++) {
+      const k = key(cur), it = byDate[k];
+      const out = weekMode ? !it : (cur.getMonth() !== monthStart.getMonth() && !it);
+      if (it) counts[MIXKEY(it.tipo)] = (counts[MIXKEY(it.tipo)]||0) + 1;
+      const c = it ? `var(--${it.tipo})` : 'transparent';
+      row += `<div class="day${out?' out':''}${inWin(cur)?' inwin':''}" style="--c:${c}">
+        <div class="n">${cur.getDate()}<small>${DOW[i]}</small></div>
+        ${it ? `<span class="badge">${esc(NAMES[it.tipo]||it.tipo)}</span>
+          <div class="t">${esc(it.titulo||'')}</div>
+          ${it.estructura?`<div class="s">${esc(it.estructura)}</div>`:''}
+          ${it.recurso?`<div class="rc">${esc(it.recurso)}</div>`:''}
+          ${it.nota?`<div class="s">${esc(it.nota)}</div>`:''}
+          <div class="foot">${it.keyword?`<span class="kw">${esc(it.keyword)}</span>`:''}<span class="fr">${[it.frames?esc(it.frames)+' fr':'', it.hora?esc(it.hora):'', it.dist?esc(it.dist):''].filter(Boolean).join(' · ')}</span>${it.responder && it.responder!==true?`<span class="rsp">↩ ${esc(it.responder)}</span>`:(it.responder===true?'<span class="rsp">↩</span>':'')}</div>` : ''}
+      </div>`;
+      cur.setDate(cur.getDate()+1);
+    }
+    const tgt = D.mix_objetivo || {};
+    const full = row.split('class="day').length - 1 - (row.match(/class="day out/g)||[]).length === 7;
+    if (full) Object.keys(tgt).forEach(t => { if (!(t in counts)) counts[t] = 0; });
+    const mix = Object.keys(counts).length ? Object.entries(counts).map(([t,n]) => {
+      let cls = '';
+      if (tgt[t]) { const [lo,hi] = String(tgt[t]).split('-').map(Number); cls = (n >= lo && n <= (hi||lo)) ? 'ok' : 'warn'; }
+      return `<span class="${cls}"><b>${esc(MIXNAME[t]||NAMES[t]||t)}</b> ${n}${tgt[t]?`/${esc(tgt[t])}`:''}</span>`;
+    }).join('') : '';
+    html += `<div class="week">${row}</div><div class="mix">${mix}</div>`;
+  }
+  const legend = Object.keys(NAMES).filter(t=>used.has(t)).map(t=>`<span class="lg"><i style="background:var(--${t})"></i>${NAMES[t]}</span>`).join('');
+  const winChips = (D.ventanas||[]).map(w=>`<span>▲ ${esc(w.nombre)} · ${esc(w.desde.slice(8))}/${esc(w.desde.slice(5,7))} → ${esc(w.hasta.slice(8))}/${esc(w.hasta.slice(5,7))}</span>`).join('');
+  const kws = (D.keywords||[]).length ? `<div class="card"><h3>Keywords ${weekMode?'de la semana':'del mes'}</h3><table><tr><th>Keyword</th><th>Recurso</th><th>Flow</th><th>Usos</th></tr>${D.keywords.map(k=>`<tr><td><b>${esc(k.kw)}</b></td><td>${esc(k.recurso||'')}</td><td><span class="st ${esc(k.flow||'probar')}">${esc(k.flow||'probar')}</span></td><td>${esc((k.usos||[]).join(' · '))}</td></tr>`).join('')}</table></div>` : '';
+  const reglas = (D.reglas||[]).length ? `<div class="card"><h3>Reglas aplicadas</h3><ul>${D.reglas.map(r=>`<li>${md(r)}</li>`).join('')}</ul></div>` : '';
+  const extra = (D.notas||[]).length ? `<div class="card"><h3>Notas</h3><ul>${D.notas.map(r=>`<li>${md(r)}</li>`).join('')}</ul></div>` : '';
+  document.title = `${D.titulo} ${D.titulo_em} · calendario de historias`;
+  document.getElementById('app').innerHTML = `
+    <header>
+      <div class="kicker">${esc(D.kicker)}</div>
+      <h1>${esc(D.titulo)} <em>${esc(D.titulo_em)}</em></h1>
+      <div class="meta">${md(D.meta||'')}</div>
+      <div class="legend">${legend}</div>
+      ${winChips?`<div class="win">${winChips}</div>`:''}
+    </header>
+    <div class="dow">${DOW.map(d=>`<div>${d}</div>`).join('')}</div>
+    ${html}
+    <section class="cards">${kws}${reglas}${extra}</section>
+    <footer>${md(D.pie||'')}</footer>`;
+})();
+</script>
+</body>
+</html>

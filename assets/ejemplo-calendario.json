@@ -1,0 +1,408 @@
+{
+ "kicker": "MARCA DE EJEMPLO · CALENDARIO DE HISTORIAS",
+ "titulo": "Octubre",
+ "titulo_em": "2026",
+ "meta": "Objetivo · **120 conversaciones/semana** · modo **estándar** · ventana WN del 26 al 31 (sube el programa el 1-nov, motivo: entra demasiada gente)",
+ "vista": "mes",
+ "ventanas": [
+  {
+   "desde": "2026-10-26",
+   "hasta": "2026-10-31",
+   "nombre": "WHY NOW · sube el programa el 1-nov"
+  }
+ ],
+ "mix_objetivo": {
+  "HR": "2-3",
+  "CTA": "2",
+  "POLL": "1"
+ },
+ "dias": [
+  {
+   "fecha": "2026-10-01",
+   "tipo": "PRESENTACION",
+   "titulo": "Qué hago: para los que llegaron en septiembre",
+   "estructura": "PRE-QUEHAGO",
+   "frames": 5,
+   "hora": "19-21 h",
+   "responder": "caja",
+   "dist": "⭐"
+  },
+  {
+   "fecha": "2026-10-02",
+   "tipo": "POLL",
+   "titulo": "¿Qué te frena más hoy? (4 ángulos)",
+   "estructura": "POLL-ANGULOS",
+   "frames": 2,
+   "hora": "19-21 h",
+   "responder": "encuesta"
+  },
+  {
+   "fecha": "2026-10-03",
+   "tipo": "PRUEBA",
+   "titulo": "3 resultados de clientes de septiembre",
+   "estructura": "PR-STACK",
+   "frames": 5,
+   "hora": "19-21 h",
+   "responder": "caja"
+  },
+  {
+   "fecha": "2026-10-04",
+   "tipo": "LIBRE",
+   "titulo": "Finde + test de 3 hook ganchos (12-16 h)",
+   "estructura": "LB-GANCHOS",
+   "frames": 2,
+   "hora": "19-21 h",
+   "responder": "encuesta"
+  },
+  {
+   "fecha": "2026-10-05",
+   "tipo": "HR",
+   "titulo": "\"no tengo tiempo para grabar\" → sistema",
+   "estructura": "HR-OBJ",
+   "frames": 5,
+   "hora": "19-21 h",
+   "responder": true,
+   "keyword": "SISTEMA",
+   "recurso": "Notion del sistema de contenido",
+   "dist": "⭐"
+  },
+  {
+   "fecha": "2026-10-06",
+   "tipo": "CTA",
+   "titulo": "Semana cargada de calls: qué hacemos en cada una",
+   "estructura": "CTA-CALLS",
+   "frames": 5,
+   "hora": "19-21 h",
+   "responder": true,
+   "keyword": "INFO",
+   "recurso": "Doc de entregables del programa"
+  },
+  {
+   "fecha": "2026-10-07",
+   "tipo": "POLL",
+   "titulo": "Encuesta que segmenta: ¿hace cuánto estás estancado?",
+   "estructura": "POLL-SEGMENTA",
+   "frames": 2,
+   "hora": "19-21 h",
+   "responder": "encuesta"
+  },
+  {
+   "fecha": "2026-10-08",
+   "tipo": "HR",
+   "titulo": "Resultado propio → mecanismo → clase de clones",
+   "estructura": "HR-RES",
+   "frames": 5,
+   "hora": "19-21 h",
+   "responder": true,
+   "keyword": "CLON",
+   "recurso": "Clase grabada 22 min: clones IA"
+  },
+  {
+   "fecha": "2026-10-09",
+   "tipo": "CTA",
+   "titulo": "Para los curiosos: cuánto dura, garantía, roadmap",
+   "estructura": "CTA-CURIOSOS",
+   "frames": 5,
+   "hora": "19-21 h",
+   "responder": true,
+   "keyword": "INFO",
+   "recurso": "Doc de entregables + video del producto"
+  },
+  {
+   "fecha": "2026-10-10",
+   "tipo": "AWARE",
+   "titulo": "Un día con clientes (collage de calls)",
+   "estructura": "AW-CLIENTES",
+   "frames": 5,
+   "hora": "19-21 h",
+   "responder": "caja"
+  },
+  {
+   "fecha": "2026-10-11",
+   "tipo": "LIBRE",
+   "titulo": "Vlog del domingo",
+   "estructura": "LB-VLOG",
+   "frames": 2,
+   "hora": "19-21 h",
+   "responder": "encuesta"
+  },
+  {
+   "fecha": "2026-10-12",
+   "tipo": "HR",
+   "titulo": "3 soluciones al mismo problema (N.1/N.2/N.3)",
+   "estructura": "HR-STACK",
+   "frames": 5,
+   "hora": "19-21 h",
+   "responder": true,
+   "keyword": "KIT",
+   "recurso": "Kit de ángulos + plantilla + lista",
+   "dist": "⭐"
+  },
+  {
+   "fecha": "2026-10-13",
+   "tipo": "CTA",
+   "titulo": "Caso en 3 actos (antes · proceso · resultado)",
+   "estructura": "CTA-CASO",
+   "frames": 5,
+   "hora": "19-21 h",
+   "responder": true,
+   "keyword": "INFO",
+   "recurso": "Doc de entregables del programa"
+  },
+  {
+   "fecha": "2026-10-14",
+   "tipo": "QA",
+   "titulo": "Cajita: respondo 3 preguntas técnicas",
+   "estructura": "QA-CAJA",
+   "frames": 4,
+   "hora": "19-21 h",
+   "responder": "caja"
+  },
+  {
+   "fecha": "2026-10-15",
+   "tipo": "HR",
+   "titulo": "Pregunta de la caja → opinión → recurso + BONUS",
+   "estructura": "HR-CAJA",
+   "frames": 5,
+   "hora": "19-21 h",
+   "responder": true,
+   "keyword": "SISTEMA",
+   "recurso": "Notion del sistema + BONUS biblioteca"
+  },
+  {
+   "fecha": "2026-10-16",
+   "tipo": "CTA",
+   "titulo": "4 wins → para los curiosos",
+   "estructura": "CTA-STACK",
+   "frames": 5,
+   "hora": "19-21 h",
+   "responder": true,
+   "keyword": "INFO",
+   "recurso": "Doc de entregables del programa"
+  },
+  {
+   "fecha": "2026-10-17",
+   "tipo": "PRUEBA",
+   "titulo": "Stack de prueba (Nombre. nicho. resultado)",
+   "estructura": "PR-STACK",
+   "frames": 5,
+   "hora": "19-21 h",
+   "responder": "caja"
+  },
+  {
+   "fecha": "2026-10-18",
+   "tipo": "LIBRE",
+   "titulo": "Opinión impopular (lifestyle)",
+   "estructura": "LB-OPINION",
+   "frames": 2,
+   "hora": "19-21 h",
+   "responder": "encuesta"
+  },
+  {
+   "fecha": "2026-10-19",
+   "tipo": "HR",
+   "titulo": "Leak: clase que di SOLO a clientes (24 h)",
+   "estructura": "HR-LEAK",
+   "frames": 5,
+   "hora": "19-21 h",
+   "responder": true,
+   "keyword": "CLON",
+   "recurso": "Grabación de la clase interna",
+   "dist": "⭐"
+  },
+  {
+   "fecha": "2026-10-20",
+   "tipo": "CTA",
+   "titulo": "Walkthrough: qué pasa cuando entrás",
+   "estructura": "CTA-WALK",
+   "frames": 5,
+   "hora": "19-21 h",
+   "responder": true,
+   "keyword": "INFO",
+   "recurso": "PDF del programa"
+  },
+  {
+   "fecha": "2026-10-21",
+   "tipo": "AWARE",
+   "titulo": "Warmeo: lo que armamos con 3 clientes + 'a fin de mes sube'",
+   "estructura": "WN-WARMEO",
+   "frames": 5,
+   "hora": "19-21 h",
+   "responder": "caja"
+  },
+  {
+   "fecha": "2026-10-22",
+   "tipo": "HR",
+   "titulo": "Auditoría por chat (contesto a TODOS)",
+   "estructura": "HR-AUDIT",
+   "frames": 5,
+   "hora": "19-21 h",
+   "responder": true,
+   "keyword": "KIT",
+   "recurso": "Auditoría personalizada por chat"
+  },
+  {
+   "fecha": "2026-10-23",
+   "tipo": "CTA",
+   "titulo": "Mensajes de alumnos → promedio → costo de inacción",
+   "estructura": "CTA-PROMEDIO",
+   "frames": 5,
+   "hora": "19-21 h",
+   "responder": true,
+   "keyword": "INFO",
+   "recurso": "Doc de entregables del programa"
+  },
+  {
+   "fecha": "2026-10-24",
+   "tipo": "POLL",
+   "titulo": "¿Qué te frena para entrar? (prepara objeciones del WN)",
+   "estructura": "POLL-SEGMENTA",
+   "frames": 2,
+   "hora": "19-21 h",
+   "responder": "encuesta"
+  },
+  {
+   "fecha": "2026-10-25",
+   "tipo": "TEASER",
+   "titulo": "'mañana les cuento algo importante' + encuesta",
+   "estructura": "TS-LOOP",
+   "frames": 2,
+   "hora": "19-21 h",
+   "responder": "encuesta"
+  },
+  {
+   "fecha": "2026-10-26",
+   "tipo": "WN",
+   "titulo": "Anuncio hablado: el 1-nov sube · por qué · casos",
+   "estructura": "WN-ANUNCIO",
+   "frames": 5,
+   "hora": "19-21 h",
+   "responder": true,
+   "keyword": "YO",
+   "recurso": "Doc entregables (antes de aumentar)",
+   "dist": "⏱48h"
+  },
+  {
+   "fecha": "2026-10-27",
+   "tipo": "WN",
+   "titulo": "Bienvenidos + quedan N · qué vas a tener",
+   "estructura": "WN-CUPOS",
+   "frames": 5,
+   "hora": "19-21 h",
+   "responder": true,
+   "keyword": "YO",
+   "recurso": "Doc entregables (antes de aumentar)"
+  },
+  {
+   "fecha": "2026-10-28",
+   "tipo": "HR",
+   "titulo": "HR blando dentro de la ventana",
+   "estructura": "HR-DISPONIBLE",
+   "frames": 5,
+   "hora": "19-21 h",
+   "responder": true,
+   "keyword": "SISTEMA",
+   "recurso": "Notion del sistema"
+  },
+  {
+   "fecha": "2026-10-29",
+   "tipo": "WN",
+   "titulo": "posdata: N/10 llenos + video 'últimos lugares'",
+   "estructura": "WN-POSDATA",
+   "frames": 5,
+   "hora": "19-21 h",
+   "responder": true,
+   "keyword": "YO",
+   "recurso": "Doc entregables (antes de aumentar)"
+  },
+  {
+   "fecha": "2026-10-30",
+   "tipo": "WN",
+   "titulo": "Oferta flash: 3 bonus a los próximos 5",
+   "estructura": "WN-FLASH",
+   "frames": 5,
+   "hora": "19-21 h",
+   "responder": true,
+   "keyword": "YO",
+   "recurso": "Doc entregables (antes de aumentar)"
+  },
+  {
+   "fecha": "2026-10-31",
+   "tipo": "WN",
+   "titulo": "Hoy es el último día + promedio de TODOS",
+   "estructura": "WN-CIERRE",
+   "frames": 5,
+   "hora": "19-21 h",
+   "responder": true,
+   "keyword": "YO",
+   "recurso": "Doc entregables (antes de aumentar)",
+   "dist": "⭐"
+  }
+ ],
+ "keywords": [
+  {
+   "kw": "SISTEMA",
+   "recurso": "Notion del sistema",
+   "flow": "ok",
+   "usos": [
+    "05",
+    "15",
+    "28"
+   ]
+  },
+  {
+   "kw": "CLON",
+   "recurso": "Clase de clones IA",
+   "flow": "probar",
+   "usos": [
+    "08",
+    "19"
+   ]
+  },
+  {
+   "kw": "KIT",
+   "recurso": "Kit de ángulos / auditoría",
+   "flow": "a-mano",
+   "usos": [
+    "12",
+    "22"
+   ]
+  },
+  {
+   "kw": "INFO",
+   "recurso": "Doc de entregables (programa)",
+   "flow": "ok",
+   "usos": [
+    "06",
+    "09",
+    "13",
+    "16",
+    "20",
+    "23"
+   ]
+  },
+  {
+   "kw": "YO",
+   "recurso": "Doc 'antes de aumentar' (WN)",
+   "flow": "ok",
+   "usos": [
+    "26",
+    "27",
+    "29",
+    "30",
+    "31"
+   ]
+  }
+ ],
+ "reglas": [
+  "Semana base SYK: **2-3 HR + 2 CTA + 1 encuesta/Q&A**; resto awareness, prueba y libre.",
+  "Keywords de **recurso** descansan 7+ días; las del **programa** (INFO, YO) se repiten.",
+  "WN en los **últimos 6 días** con 1 HR blando intercalado; descanso el 1-nov.",
+  "Todos los días algo para responder (↩)."
+ ],
+ "notas": [
+  "**Para preparar antes del 5-oct:** Notion SISTEMA con flow probado · doc de entregables INFO.",
+  "**Antes del 19-oct:** probar el flow CLON (story reply) con DM de test."
+ ],
+ "pie": "calendario de ejemplo · se ajusta cada domingo con el **registro**"
+}
