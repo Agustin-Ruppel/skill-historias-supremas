@@ -88,7 +88,7 @@ def _ngrams(txt, n=7):
 
 def _corpus_ngrams(n=7):
     base = os.path.join(HERE, "..", "references")
-    src = [os.path.join(base, "nivel-ramiro.md")] + [os.path.join(base, "corpus", f) for f in os.listdir(os.path.join(base, "corpus")) if f.startswith("stories-")]
+    src = [os.path.join(base, "nivel-calidad.md")] + [os.path.join(base, "corpus", f) for f in os.listdir(os.path.join(base, "corpus")) if f.startswith("stories-")]
     grams = set()
     for s in src:
         try:

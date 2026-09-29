@@ -81,13 +81,13 @@ y escribir la secuencia de hoy. Todo en el mismo turno.
 - **Referencias por modo** (cargar solo las que hacen falta):
   - PERFIL → `references/perfil-marca.md`
   - CALENDARIO → `references/calendario.md` + `references/metodo.md` (+ `metricas.md` si hay registro)
-  - SECUENCIA → **`references/nivel-ramiro.md` (siempre, primero)** + `references/estructuras.md` (índice, árbol y
+  - SECUENCIA → **`references/nivel-calidad.md` (siempre, primero)** + `references/estructuras.md` (índice, árbol y
     piezas sueltas) + **solo** el archivo del tipo del día
     (`references/estructuras/hr.md` | `cta.md` | `wn.md` | `nutricion.md`) + `references/copy.md` +
     `references/visual.md`, más 1-2 ejemplos reales de la estructura elegida (`grep -i "<código|tema>"
     references/corpus/INDEX.md` y abrir esa sección)
   - REGISTRO → `references/metricas.md`
-  - REVISIÓN → `nivel-ramiro.md` + `metodo.md` + `estructuras.md` + `copy.md` + `visual.md` + `metricas.md` §2-3 +
+  - REVISIÓN → `nivel-calidad.md` + `metodo.md` + `estructuras.md` + `copy.md` + `visual.md` + `metricas.md` §2-3 +
     `plantillas-output.md`
   - Formatos de salida → `references/plantillas-output.md`; esquemas JSON → `assets/ejemplo-secuencia.json`,
     `assets/ejemplo-calendario.json`
@@ -146,7 +146,7 @@ y escribir la secuencia de hoy. Todo en el mismo turno.
     - la cadena de puentes: qué pregunta deja abierta cada frame y cuál la contesta
 
     Si no entra en una frase, son dos secuencias: se elige una.
-3c. **Material del nivel Ramiro** (`nivel-ramiro.md` §2), antes de redactar:
+3c. **Material del nivel Ramiro** (`nivel-calidad.md` §2), antes de redactar:
     - el número más fuerte del inventario (¿está fuera de lo normal para el avatar?) va en F1 o F2
     - un concepto con nombre propio (HR y CTA)
     - el recurso ABISMAL: nombre, volumen, ancla y bonus
@@ -176,10 +176,10 @@ y escribir la secuencia de hoy. Todo en el mismo turno.
 7. **JSON y render con lint**: cargar en el JSON `topes` ({frame, cta, caja, duros}) y `compliance` ({prohibir[],
    sin_signos, regex[]}) desde el perfil. Corregir todo ✗ ERROR, y los avisos que tengan sentido, antes de
    entregar.
-8. **Juez adversarial** (`nivel-ramiro.md` §4):
+8. **Juez adversarial** (`nivel-calidad.md` §4):
    - Primero las 3 debilidades, después los topes automáticos y recién ahí las notas, en `autoeval` con
      `debilidades`.
-   - Si hay subagentes, el juez corre en uno aparte que solo ve `nivel-ramiro.md` y la secuencia.
+   - Si hay subagentes, el juez corre en uno aparte que solo ve `nivel-calidad.md` y la secuencia.
    - Si "¿la subiría?" queda por debajo de 9, se reescribe. Si lo que falta es un insumo real (captura, caso,
      número de resultado), se entrega con el tope marcado y se pide.
    - Test del escéptico: verificar toda cuenta en pantalla.

@@ -1,7 +1,7 @@
 # historias-ig
 
 **Una skill de Claude Code que te dice qué historias de Instagram subir cada día y te las escribe frame por frame.**
-La armé estudiando cómo hacen historias las cuentas que más venden con ellas, empezando por @ramiro.cubria.
+La armé estudiando cómo hacen historias las cuentas que más venden con ellas.
 
 Hecha por **Agustín Ruppel** · [@agustin.ruppel](https://instagram.com/agustin.ruppel)
 
@@ -29,13 +29,13 @@ Todo sale en `.md` (para copiar a Instagram) y en `.html` (la placa visual, para
 
 ## De dónde sale
 
-- **~120 secuencias reales transcriptas frame por frame**, casi todas de @ramiro.cubria y de cuentas que usan su
-  método. Están en `references/corpus/` y la skill las usa como ejemplos cada vez que escribe.
-- **El método SYK**: cuántos hand raisers, CTAs y why now por semana, y cuándo va cada uno.
+- **~120 secuencias reales transcriptas frame por frame**, de cuentas que venden con
+  historias. Están en `references/corpus/` y la skill las usa como ejemplos cada vez que escribe.
+- **Un método de calendario probado**: cuántos hand raisers, CTAs y why now por semana, y cuándo va cada uno.
 - **Stats reales** de historias que explotaron: tasa de respuesta por tipo, qué es bueno y qué es flojo.
 - **~60 estructuras con nombre** (HR, CTA, WN, encuestas, awareness), cada una con su molde y su ejemplo real.
-- **Un loop de calidad**: la skill generó secuencias, un juez que razona como Ramiro las destrozó, y cada error
-  quedó escrito como regla. Esas reglas están en `references/nivel-ramiro.md`.
+- **Un loop de calidad**: la skill generó secuencias, un juez muy exigente las destrozó, y cada error quedó
+  escrito como regla dentro de la skill.
 
 ## Instalación
 
@@ -69,7 +69,7 @@ marcas: cada proyecto tiene su perfil.
 historias-ig/
 ├── SKILL.md                    el procedimiento (lo que lee Claude)
 ├── references/
-│   ├── nivel-ramiro.md         el estándar de calidad + el juez
+│   ├── nivel-calidad.md         el estándar de calidad + el juez
 │   ├── metodo.md               los 9 tipos de historia y para qué sirve cada uno
 │   ├── calendario.md           el motor: qué va cada día, semana y mes
 │   ├── estructuras.md          árbol de decisión + estructuras/ (hr · cta · wn · nutrición)

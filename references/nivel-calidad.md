@@ -169,7 +169,7 @@
    - si el lint da algún aviso de emojis, puteada, muletilla, largo o copia, formato no pasa de 8
 3. **Después, las notas**. Si hay un 9 al lado de una debilidad sin resolver, se baja.
 
-Si el entorno permite subagentes, el juez corre en **un subagente aparte** que recibe solo `nivel-ramiro.md` y la
+Si el entorno permite subagentes, el juez corre en **un subagente aparte** que recibe solo `nivel-calidad.md` y la
 secuencia (sin la justificación del que la escribió). Si "¿la subiría?" queda por debajo de 9, se reescribe antes
 de entregar; si lo que falta es un insumo real, se entrega marcando el tope y se pide el insumo.
 1. **Gancho**: ¿F1 frena el pulgar en mute (cara, absurdo, número fuera de lo normal)?
