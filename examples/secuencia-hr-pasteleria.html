@@ -516,7 +516,7 @@ footer b{color:var(--gold);font-weight:600}
   const conc = (D.concepto || RC.nombre) ? `<div class="card"><h3>Concepto y recurso</h3>${D.concepto?`<p><strong>Concepto:</strong> ${md(D.concepto)}</p>`:''}${RC.nombre?`<p><strong>Recurso:</strong> ${esc(RC.nombre)}${RC.volumen?` · ${esc(RC.volumen)}`:''}</p>`:''}${RC.ancla?`<p><strong>Ancla:</strong> ${esc(RC.ancla)}</p>`:''}${RC.bonus?`<p><strong>Bonus:</strong> ${esc(RC.bonus)}</p>`:''}</div>` : '';
   const AE = D.autoeval;
   const KS = [['gancho','Gancho'],['hilo','Hilo'],['prueba','Prueba'],['recurso','Recurso'],['cta','CTA'],['voz','Voz'],['formato','Formato'],['subiria','¿La subiría?']];
-  const juez = AE ? `<div class="card judge"><h3>Juez · nivel Ramiro</h3><div class="scores">${KS.map(([k,l])=>`<span class="${Number(AE[k])>=9?'ok':'lo'}"><i>${esc(AE[k]??'–')}</i>${l}</span>`).join('')}</div>${AE.notas?`<p>${md(AE.notas)}</p>`:''}</div>` : '';
+  const juez = AE ? `<div class="card judge"><h3>Juez · nivel de calidad</h3><div class="scores">${KS.map(([k,l])=>`<span class="${Number(AE[k])>=9?'ok':'lo'}"><i>${esc(AE[k]??'–')}</i>${l}</span>`).join('')}</div>${AE.notas?`<p>${md(AE.notas)}</p>`:''}</div>` : '';
   const R = D.revision;
   const revision = R ? `<div class="why rev"><h3>Revisión de la original${R.metrica?` · ${esc(R.metrica)}`:''}</h3>
       ${R.veredicto?`<p>${md(R.veredicto)}</p>`:''}
