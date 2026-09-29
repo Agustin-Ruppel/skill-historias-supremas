@@ -274,7 +274,7 @@ def lint_secuencia(d, cli):
             warns.append("F1 sin dirección de actuación en el visual (expresión + gesto + encuadre + objeto). El gancho lo vende una cara o un absurdo.")
     ae = d.get("autoeval") or {}
     if not ae:
-        warns.append("Sin 'autoeval' (juez nivel Ramiro, 8 criterios). Autoevaluá antes de entregar.")
+        warns.append("Sin 'autoeval' (juez de calidad, 8 criterios). Autoevaluá antes de entregar.")
     else:
         try:
             if float(ae.get("subiria", 0)) < 9:
