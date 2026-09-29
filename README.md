@@ -41,7 +41,7 @@ Todo sale en `.md` (para copiar a Instagram) y en `.html` (la placa visual, para
 ## Instalación
 
 ```bash
-git clone https://github.com/<tu-usuario>/historias-ig ~/.claude/skills/historias-ig
+git clone https://github.com/Agustin-Ruppel/skill-historias-supremas ~/.claude/skills/historias-ig
 ```
 
 Necesitás **Claude Code** y **python3**. Si también querés que te saque la captura PNG de cada placa:
