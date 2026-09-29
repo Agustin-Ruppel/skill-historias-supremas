@@ -3,8 +3,7 @@
 **Una skill de Claude Code que te dice qué historias de Instagram subir cada día y te las escribe frame por frame.**
 La armé estudiando cómo hacen historias las cuentas que más venden con ellas, empezando por @ramiro.cubria.
 
-Hecha por **Agustín Ruppel** · [@agustin.ruppel](https://instagram.com/agustin.ruppel) · armo sistemas de IA para
-infoproductores.
+Hecha por **Agustín Ruppel** · [@agustin.ruppel](https://instagram.com/agustin.ruppel)
 
 ![Secuencia de ejemplo](docs/secuencia.png)
 
@@ -84,27 +83,3 @@ historias-ig/
 ├── scripts/render.py           arma el HTML y chequea las reglas (lint)
 └── examples/                   una secuencia y un calendario de ejemplo
 ```
-
-## Créditos
-
-El método y los ejemplos no son míos: los estudié y los ordené.
-
-- **Ramiro Cubría / SYK** ([@ramiro.cubria](https://instagram.com/ramiro.cubria)): la mayoría de las secuencias
-  del corpus, el método de calendario (hand raiser, CTA, why now) y los Looms sobre CTAs e insight.
-- **Alex Carrera**: el documento de estructura de historias (hook gancho → hook resultado → vehículo → CTA).
-- Otras cuentas del corpus: @cristiansocial, @mateomaffia, @fiariveraoff, @juanpicrea, @matelezama,
-  @agustinbadt, @nahue.urso.
-- Frameworks complementarios: Nick Setting, Max Inhouse, SooWei Goh.
-
-El corpus son transcripciones de historias publicadas en abierto, juntadas para estudiar su estructura. Los derechos
-de ese contenido son de sus autores. Si sos uno de ellos y querés que saque algo, escribime por
-[Instagram](https://instagram.com/agustin.ruppel) y lo saco.
-
-## Sobre mí
-
-Soy Agustín, tengo 21 años y programo desde los 14. Armo sistemas de IA para infoproductores: setters, análisis
-de llamadas, CRM, clones de contenido. Esta skill empezó como algo para mis propias historias y terminó siendo
-esto.
-
-Si querés que te la adapte a tu negocio, o que te arme el sistema entero, escribime
-**"HISTORIAS"** por [Instagram](https://instagram.com/agustin.ruppel).
